@@ -1,4 +1,4 @@
-package com.hsc.study.leetcode.hard;
+package com.hsc.study.leetcode.hard._1;
 
 /**
  * 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。

@@ -17,7 +17,7 @@ package com.hsc.study.leetcode.simple._3;
  */
 public class Solution {
     public static boolean isPalindrome(int x) {
-        if (x < 0) {
+        if (x < 0 ||(x % 10 == 0&& x!=0)) {
             return false;
         }
         int input=x;
