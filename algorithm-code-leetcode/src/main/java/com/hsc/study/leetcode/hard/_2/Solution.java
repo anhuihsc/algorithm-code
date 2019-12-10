@@ -1,5 +1,7 @@
 package com.hsc.study.leetcode.hard._2;
 
+import java.util.regex.Pattern;
+
 /**
  * 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
  * <p>
@@ -22,8 +24,23 @@ package com.hsc.study.leetcode.hard._2;
  * 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/regular-expression-matching 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution {
-    public boolean isMatch(String s, String p) {
+    public static boolean   isMatch(String s, String p) {
+
+        Pattern.matches(p, s);
         // 直接用工具类
         return s.matches(p);
     }
+    public static void main(String[] args) {
+
+        isMatch("aaa","a*");
+        String badRegex = "^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~\\\\/])+$";
+        String bugUrl = "http://www.fapiao.com/dddp-web/pdf/download?request=6e7JGxxxxx4ILd-kExxxxxxxqJ4-CHLmqVnenXC692m74H38sdfdsazxcUmfcOH2fAfY1Vw__%5EDadIfJgiEf";
+        if (bugUrl.matches(badRegex)) {
+            System.out.println("match!!");
+        } else {
+            System.out.println("no match!!");
+        }
+    }
+
+
 }
