@@ -28,7 +28,8 @@ public class Solution {
             if (value == null) {
                 continue;
             }
-            for(int j=0;j<d      )
         }
+
+        return null;
     }
 }
