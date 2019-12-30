@@ -1,5 +1,7 @@
 package com.hsc.study.leetcode.medium._1;
 
+import com.hsc.study.leetcode.ListNode;
+
 /**
  * @author wansong
  * <p>
