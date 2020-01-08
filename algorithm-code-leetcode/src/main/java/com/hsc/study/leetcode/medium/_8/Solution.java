@@ -70,7 +70,10 @@ public class Solution {
         return false;
     }
 
-    //private List<List<Integer>> doublePoint(int[] nums)
+
+
+
+        //private List<List<Integer>> doublePoint(int[] nums)
     //{}
 
     public  List<List<Integer>> doublePoint(int[] nums) {
