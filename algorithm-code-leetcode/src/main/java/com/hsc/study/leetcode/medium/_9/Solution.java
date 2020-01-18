@@ -17,9 +17,42 @@ public class Solution {
         if (nums == null || nums.length < 3) {
             return 0;
         }
-        return violence(nums, target);
+        return doublePoint(nums, target);
     }
 
+    private int doublePoint(int[] nums, int target) {
+        int value = nums[0] + nums[1] + nums[2];
+        int closeValue = Math.abs(value - target);
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            int left=i+1;
+            int right=nums.length-1;
+            while (left<right)
+            {
+                int sum = nums[left] + nums[right] + nums[i];
+                if(sum==target)
+                {
+                    return sum;
+                }
+
+                if (Math.abs(sum - target) < closeValue) {
+                    closeValue = Math.abs(sum - target);
+                    value = sum;
+                }
+                if (sum > target) {
+                    right--;
+                } else {
+                    left++;
+                }
+
+            }
+        }
+        return value;
+    }
+    /**
+     *
+     * O(n3)
+     */
     private int violence(int[] nums, int target) {
         int value = nums[0] + nums[1] + nums[2];
         int closeValue = Math.abs(value - target);
