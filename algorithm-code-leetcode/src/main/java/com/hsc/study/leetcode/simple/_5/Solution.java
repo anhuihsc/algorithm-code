@@ -1,7 +1,4 @@
 package com.hsc.study.leetcode.simple._5;
-
-import com.hsc.study.leetcode.simple._4.TreeNode;
-
 /**
  * @author wansong
  */
