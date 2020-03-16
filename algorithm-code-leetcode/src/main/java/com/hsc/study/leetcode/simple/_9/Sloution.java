@@ -46,5 +46,9 @@ public class Sloution {
 
     }
 
+    public static void main(String[] args) {
+
+    }
+
 
 }
