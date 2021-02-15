@@ -22,7 +22,7 @@ import java.util.Map;
  * 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/two-sum 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Sloution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(  ListNode<Integer> l1,   ListNode<Integer> l2) {
         if (l1 == null) {
             return l2;
         }

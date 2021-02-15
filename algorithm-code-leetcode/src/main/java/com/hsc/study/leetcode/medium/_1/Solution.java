@@ -19,11 +19,11 @@ import com.hsc.study.leetcode.ListNode;
  */
 
 public class Solution {
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode l1Next = l1;
-        ListNode l2Next = l2;
-        ListNode resHead = null;
-        ListNode resNextHead = null;
+    public static ListNode addTwoNumbers(ListNode<Integer> l1, ListNode<Integer> l2) {
+        ListNode<Integer> l1Next = l1;
+        ListNode<Integer> l2Next = l2;
+        ListNode<Integer> resHead = null;
+        ListNode<Integer> resNextHead = null;
         int carryValue = 0;
         while (l1Next != null || l2Next != null) {
             int val = carryValue;
@@ -41,15 +41,15 @@ public class Solution {
                 val = val % 10;
             }
             if (resHead == null) {
-                resHead = new ListNode(val);
+                resHead = new ListNode<>(val);
                 resNextHead = resHead;
             } else {
-                resNextHead.next = new ListNode(val);
+                resNextHead.next = new ListNode<>(val);
                 resNextHead = resNextHead.next;
             }
         }
         if (carryValue > 0) {
-            resNextHead.next = new ListNode(carryValue);
+            resNextHead.next = new ListNode<>(carryValue);
         }
         return resHead;
     }

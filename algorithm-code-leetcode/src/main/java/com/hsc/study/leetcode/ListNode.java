@@ -3,10 +3,10 @@ package com.hsc.study.leetcode;
 /**
  * @author wansong
  */
-public class ListNode {
-    public int val;
+public class ListNode<T> {
+    public T val;
     public ListNode next;
 
-    public ListNode(int x) { val = x; }
+    public ListNode(T x) { val = x; }
 
 }
