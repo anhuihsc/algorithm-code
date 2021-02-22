@@ -2,6 +2,8 @@ package com.hsc.study.leetcode.medium._1;
 
 import com.hsc.study.leetcode.ListNode;
 
+import java.util.Arrays;
+
 /**
  * @author wansong
  * <p>
