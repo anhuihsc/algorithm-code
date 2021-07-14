@@ -1,5 +1,7 @@
 package com.hsc.study.leetcode.base;
 
+import java.util.Arrays;
+
 /**
  * @author wansong
  * @date 2021/2/21
@@ -140,7 +142,7 @@ public class Sorts {
         if (arr == null || arr.length <= 1) {
             return;
         }
-        quickSortUseRecursion(arr, 0, arr.length-1);
+        quickSortUseRecursion(arr, 0, arr.length - 1);
     }
 
     private static void quickSortUseRecursion(int arr[], int p, int r) {
@@ -175,12 +177,62 @@ public class Sorts {
         return leftIndex;
     }
 
+    private static int[] quickSort(int[] arr, int start, int end,int k) {
+        if (start >= end) {
+            return null;
+        }
+        int p = paration(arr, start, end);
+        if(p>k) {
+            quickSort(arr, start, p-1, k);
+        }
+        if(p<k) {
+            quickSort(arr, p + 1, end,k);
+        }
+        return Arrays.copyOf(arr, k);
+    }
+
+    private static int paration(int[] arr, int start, int end) {
+        int provit = arr[start];
+        int leftIndex = start;
+        for (int i = start + 1; i <= end; i++) {
+            if (arr[i] < provit) {
+                leftIndex++;
+                if (leftIndex != i) {
+                    int tmp = arr[i];
+                    arr[i] = arr[leftIndex];
+                    arr[leftIndex] = tmp;
+                }
+            }
+        }
+        int tmp = arr[start];
+        arr[start] = arr[leftIndex];
+        arr[leftIndex] = tmp;
+
+        return leftIndex;
+    }
+
+    public static int kSmall(int arr[], int k) {
+        if (arr == null || arr.length < k) {
+            return -1;
+        }
+        int p = partition(arr, 0, arr.length - 1);
+        while (p + 1 != k) {
+            if (p < k) {
+                p = partition(arr, p + 1, arr.length - 1);
+            } else {
+                p = partition(arr, 0, p);
+            }
+        }
+        return arr[p];
+    }
 
 
     public static void main(String[] args) {
-        int arr[] = {1,3, 2, 13, 4, 5, 6, 8, 9, 12};
-        quickSort(arr);
-        print(arr);
+        int arr[] = {0,1,1,2,4,4,1,3,3,2, 6};
+        int k=3;
+        int []res=quickSort(arr, 0, arr.length - 1,k);
+        print(res);
+//        System.out.println(kSmall(arr, 3));
     }
 
 }

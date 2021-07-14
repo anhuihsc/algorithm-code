@@ -6,24 +6,35 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author wansong
  */
 public class Test {
-    private static int i=0;
-    private ReentrantLock lock;
-    public static void main(String[] args) {
-        synchronized (Test.class) {
-            i++;
+    private static int x=100;
+    public static int aMethod(int i)throws Exception
+    {
+        try{
+            return i / 10;
         }
-        System.out.println(i);
-     new Thread(new Runnable() {
-         public void run() {
-             testSyn();
-         }
-     }).start();
+        catch (Exception ex)
+        {
+            throw new Exception("exception in a Method");
+        } finally{
+            System.out.printf("finally");
+        }
     }
 
-    public static void testSyn() {
-        synchronized (Test.class) {
-            i++;
+    public  String Test()
+    {
+        return "";
+    }
+    public static void main(String [] args)
+    {
+        Test.x--;
+        try
+        {
+            aMethod(0);
         }
-        System.out.println(i);
+        catch (Exception ex)
+        {
+            System.out.printf("exception in main");
+        }
+        System.out.printf("finished");
     }
 }
